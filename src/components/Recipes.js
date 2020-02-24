@@ -23,8 +23,9 @@ class Recipes extends Component {
     </TreeItem>
   }
 
-  renderTree = roots => {(
-          <TreeItem key="1" nodeId="1" label="S1" expanded="true" content="ssss"></TreeItem>  
+  renderTree = roots => {
+    return (
+       roots.map(root => <TreeItem key="{root.id}" nodeId="{root.id}" label="{root.name}" content="{root.name}" expanded="true"></TreeItem>  )  
     )}
 
    /*
@@ -58,11 +59,8 @@ class Recipes extends Component {
     return (
       <Fragment>
           <h3> Recipes</h3>
-          <TreeView defaultCollapseIcon={<ExpandMoreIcon />} 
-                defaultExpandIcon={<ChevronRightIcon />} >
-                <TreeItem key="1" nodeId="1" label="S1" expanded="true" content="ssss">
-                  <TreeItem key="11" nodeId="11" label="S11" expanded="true" content="ssss2323"/>
-                </TreeItem>  
+          <TreeView>
+              {this.renderTree(treeData)}
           </TreeView>
         </Fragment>
     );
@@ -74,6 +72,18 @@ class Recipes extends Component {
 export default Recipes;
 
 
+
+/*
+{treeData.map( (elment,index)=> <TreeItem id={index} label={index} content={index} ></TreeItem>)}
+
+<TreeView defaultCollapseIcon={<ExpandMoreIcon />} 
+                defaultExpandIcon={<ChevronRightIcon />} >
+                <TreeItem key="1" nodeId="1" label="S1" expanded="true" content="ssss">
+                    <TreeItem key="11" nodeId="11" label="S11" expanded="true" content="ssss2323"/>
+                </TreeItem>  
+          </TreeView>
+
+*/
 
 /*
 <TreeView>
