@@ -11,11 +11,12 @@ class App extends Component {
 
 
   render() {   
-    return (  
-      <Fragment>          
-          <Recipes items={this.state.items}/>       
+    return (
+      <Fragment>
+        <h1> hello</h1>
+        <Recipes items={this.state.items}/> 
       </Fragment>
-    );
+    )
   }
 }
 

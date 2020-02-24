@@ -26,7 +26,7 @@ function toHierarchical(dic){
         if (dic.hasOwnProperty(key)) {
             //console.log(key + " -> " + dic[key]);
 
-            var root = { id : key , children : []};
+            var root = { id : key , children : [] , name : key};
             roots.push(root);
 
             var items = dic[key];
